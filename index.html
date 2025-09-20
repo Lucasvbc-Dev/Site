@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nosso Amor</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg,#ffe6eb,#fff6f8,#ffd9d9);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #444;
+    overflow-x: hidden;
+  }
+  @keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+
+  /* HERO/BANNER */
+  .hero {
+    height: 100vh;
+    background: linear-gradient(rgba(255,75,110,0.4),rgba(255,75,110,0.4)),
+      url('nos.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+  }
+  .hero h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4em;
+    margin: 0;
+    animation: fadeInDown 2s ease-in-out;
+  }
+  .hero h2 {
+    font-size: 1.5em;
+    margin-top: 10px;
+    animation: fadeInUp 2s ease-in-out;
+  }
+  @keyframes fadeInDown {from {opacity:0;transform:translateY(-50px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes fadeInUp {from {opacity:0;transform:translateY(50px);}to{opacity:1;transform:translateY(0);}}
+
+  section {
+    margin: 40px auto;
+    width: 85%;
+    background: rgba(255,255,255,0.8);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  h3 {
+    font-size: 2em;
+    color: #ff4b6e;
+  }
+
+  /* Timeline cards */
+  .timeline-item {
+    background: #fff;
+    margin: 30px auto;
+    padding: 20px;
+    border-left: 5px solid #ff4b6e;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
+  .timeline-item h4 {
+    margin: 0 0 10px 0;
+    font-family: 'Dancing Script', cursive;
+    color: #ff4b6e;
+    font-size: 1.6em;
+  }
+
+  /* Carrossel */
+  .carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  .carousel img {
+    width: 100%;
+    display: none;
+  }
+  .carousel img.active {
+    display: block;
+  }
+  .carousel button.prev,
+  .carousel button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,75,110,0.7);
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  .carousel button.prev {left: 10px;}
+  .carousel button.next {right: 10px;}
+  .carousel button:hover {background: rgba(255,75,110,1);}
+  .carousel-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+  }
+  .carousel-buttons span {
+    height: 10px;
+    width: 10px;
+    background: #ff4b6e;
+    border-radius: 50%;
+    margin: 0 4px;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+  }
+  .carousel-buttons span.active {opacity:1;}
+
+  /* Corações */
+  .heart {
+    position: fixed;
+    top: -10px;
+    color: #ff4b6e;
+    font-size: 16px;
+    animation: fall 5s linear infinite;
+  }
+  @keyframes fall {to {transform: translateY(100vh);} }
+
+  #surpresa {
+    display: none;
+    margin-top: 20px;
+    font-size: 2em;
+    color: #ff4b6e;
+  }
+  button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    background: #ff4b6e;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  button:hover {background: #ff2a52;}
+
+  footer {
+    margin-top: 40px;
+    color: #777;
+    font-size: 0.9em;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Julia Franco </h1>
+  <h2>O amor da Minha vida.</h2>
+</div>
+
+<section>
+  <h3>Intuito desse site:</h3>
+  <p>Mostrar o quanto sou apaixonado por você e grato pelo nosso relacionamento!</p>
+  <button onclick="mostrarSurpresa()">Clique para uma surpresa</button>
+  <div id="surpresa"> Eu te amo muito, linda! ❤️ </div>
+</section>
+
+<section>
+  <h3>🕒 Nossa Linha do Tempo</h3>
+  <div class="timeline-item">
+    <h4>2023 - Onde tudo começou</h4>
+    <p>Nos conhecemos na escola, e começamos a conversar e virar amigos, porém, eu sempre quis mais que amizade, você sempre foi meu ponto fraco. Felizmente, depois de alguns meses, podemos ficar algumas vezes, e eu não tive como resistir. E graças a Deus, tive a melhor decisão da minha vida: O pedido de namoro!
+    </p>
+    <div class="carousel" data-index="0">
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+      <img src="imagens/ela.jpg" class="active">
+      <img src="imagens/nos7.jpg">
+      <img src="imagens/nos11.jpg">
+      <img src="imagens/nos10.jpg">
+    </div>
+    <div class="carousel-buttons"></div>
+  </div>
+
+  <div class="timeline-item">
+    <h4>2024 - Crescendo juntos</h4>
+    <p>Nesse ano, passamos por muitas dificuldades, mas nunca desistimos um do outro, e depois de enfrentar todas as dificuldades, vivemos ótimos momentos, fizemos a melhor viagem da nossa vida, e a partir dali, tudo melhorou e fluiu da melhor forma. O resultado da nossa resiliência, foram momentos incríveis, e um relacionamento leve e muito feliz.</p>
+    <div class="carousel" data-index="0">
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+      <img src="imagens/nos3.jpg" class="active">
+      <img src="imagens/nos2.jpg">
+      <img src="imagens/nos8.jpg">
+    </div>
+    <div class="carousel-buttons"></div>
+  </div>
+
+  <div class="timeline-item">
+    <h4>2025 - 2 anos de nós</h4>
+    <p>Celebrando quase 2 anos de namoro, sou muito grato por tudo que vivemos até aqui, sou a pessoa mais feliz do mundo ao seu lado. Você me ensinou a ser uma pessoa melhor. Foram momentos incríveis com você, e tenho certeza que ainda vem muita coisa pela frente!</p>
+    <div class="carousel" data-index="0">
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+      <img src="imagens/nos9.jpg" class="active">
+      <img src="imagens/nos5.jpg">
+      <img src="imagens/nos13.jpg">
+    </div>
+    <div class="carousel-buttons"></div>
+  </div>
+
+<div class="timeline-item">
+    <h4>2040 - O Nosso futuro</h4>
+    <p>E depois de 15 anos de relacionamento, oque eu sonho pra gente, é construir nossa vida e nossa família juntos!</p>
+    <div class="carousel" data-index="0">
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+      <img src="imagens/metaFinal.jpg" class="active">
+      <img src="imagens/metaFInal2.jpg">
+      <img src="imagens/metaFinal3.jpg">
+    </div>
+    <div class="carousel-buttons"></div>
+  </div>
+</section>
+
+
+<!-- NOVA SECTION BONUS -->
+<section>
+  <h3>🎁 Parte Bônus</h3>
+  <button onclick="mostrarBonus()">Bônus</button>
+  <div id="bonus" style="display:none; margin-top:20px;">
+    <p>
+      Não tem nada melhor do que ver sua reação ao comer um DOCE (principalmente MeroCoockie)
+    </p>
+    <div style="max-width:560px; margin:0 auto;">
+      <!-- troque SEU_ID_DO_VIDEO pelo id do seu vídeo -->
+      <iframe width="100%" height="315" 
+        src="imagens/doce.mp4" 
+        title="Vídeo bônus"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+<!-- FIM NOVA SECTION BONUS -->
+
+<footer>
+  <p>&copy; 2025 | Feito com amor ❤️ </p>
+</footer>
+
+<script>
+  // corações caindo
+  function createHeart(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+    document.body.appendChild(heart);
+    setTimeout(()=>{heart.remove()},5000);
+  }
+  setInterval(createHeart, 400);
+
+  // surpresa
+  function mostrarSurpresa(){
+    document.getElementById("surpresa").style.display = "block";
+  }
+
+  // bônus
+  function mostrarBonus(){
+    document.getElementById("bonus").style.display = "block";
+    document.getElementById("bonus").scrollIntoView({behavior:'smooth'});
+  }
+
+  // carrossel com setas e dots
+  document.querySelectorAll('.carousel').forEach(carousel => {
+    const imgs = carousel.querySelectorAll('img');
+    const prev = carousel.querySelector('.prev');
+    const next = carousel.querySelector('.next');
+    const buttonsDiv = carousel.nextElementSibling;
+    let current = 0;
+
+    const update = () => {
+      imgs.forEach(img=>img.classList.remove('active'));
+      imgs[current].classList.add('active');
+      const dots = buttonsDiv.querySelectorAll('span');
+      dots.forEach((d,i)=>d.classList.toggle('active',i===current));
+    };
+
+    // cria dots
+    imgs.forEach((_,i)=>{
+      const dot=document.createElement('span');
+      dot.addEventListener('click',()=>{
+        current=i;update();
+      });
+      if(i===0) dot.classList.add('active');
+      buttonsDiv.appendChild(dot);
+    });
+
+    // eventos setas
+    next.addEventListener('click',()=>{
+      current=(current+1)%imgs.length;
+      update();
+    });
+    prev.addEventListener('click',()=>{
+      current=(current-1+imgs.length)%imgs.length;
+      update();
+    });
+  });
+</script>
+</body>
+</html>
